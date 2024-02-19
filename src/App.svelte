@@ -1,9 +1,11 @@
 <script>
 	const name = "Sushanth";
+	const role = "<b>Software Engineer</b>";
 </script>
 
 <main>
 	<h1>Hello {name}!</h1>
+	<p>You are a {@html role}</p>
 </main>
 
 <style>
