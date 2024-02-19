@@ -6,6 +6,11 @@
 	const disabled = false;
 	const status = "success";
 	const married = false;
+	const skills = ["React", "Svelte"];
+	const experiences = [
+		{ role: "Software Engineer", company: "Needl.ai" },
+		{ role: "Planning Engineer", company: "L&T"},
+	];
 </script>
 
 <main>
@@ -18,6 +23,16 @@
 	<!-- <p class:married={married}>Married: {married}</p> -->
 	<p class:married>Married: {married}</p>
 	<button {disabled}>Toggle</button>
+	<br />
+	<h3>Skills</h3>
+	{#each skills as skill, index (skill)}
+		<h6>{index + 1}: {skill}</h6>
+	{/each}
+	<br />
+	<h3>Experiences</h3>
+	{#each experiences as experience, index (experience.company)}
+		<p>{index + 1}: {experience.role} at {experience.company}</p>
+	{/each}
 </main>
 
 <style>
@@ -40,7 +55,6 @@
 	}
 
 	main {
-		text-align: center;
 		padding: 1em;
 		max-width: 240px;
 		margin: 0 auto;
