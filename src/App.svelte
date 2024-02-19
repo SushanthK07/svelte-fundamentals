@@ -4,13 +4,17 @@
 	const role = "<b>Software Engineer</b>";
 	const id = "sushanthk07";
 	const disabled = false;
-	const status = "success";
+	let status = "success";
 	const married = false;
 	const skills = ["React", "Svelte"];
 	const experiences = [
 		{ role: "Software Engineer", company: "Needl.ai" },
 		{ role: "Planning Engineer", company: "L&T"},
 	];
+
+	const toggleStatus = () => {
+		status = status === "success" ? "danger" : "success";
+	};
 </script>
 
 <main>
@@ -22,7 +26,7 @@
 	<!-- <p class={married ? 'married' : ''}>Married: {married}</p> -->
 	<!-- <p class:married={married}>Married: {married}</p> -->
 	<p class:married>Married: {married}</p>
-	<button {disabled}>Toggle</button>
+	<button {disabled} on:click={toggleStatus}>Toggle</button>
 	<br />
 	<h3>Skills</h3>
 	{#each skills as skill, index (skill)}
