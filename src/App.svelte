@@ -1,11 +1,15 @@
 <script>
 	const name = "Sushanth";
 	const role = "<b>Software Engineer</b>";
+	const id = "sushanthk07";
+	const disabled = false;
 </script>
 
 <main>
-	<h1>Hello {name}!</h1>
+	<!-- <h1 id={id}>Hello {name}!</h1> -->
+	<h1 {id}>Hello {name}!</h1>
 	<p>You are a {@html role}</p>
+	<button {disabled}>Bind</button>
 </main>
 
 <style>
